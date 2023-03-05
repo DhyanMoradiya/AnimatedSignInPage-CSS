@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    color: #FFF;
+    background: #8f2c24;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section .bg,
+section .trees {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section .trees {
+    z-index: 100;
+}
+
+section .girl {
+    position: absolute;
+    scale: 0.65;
+    animation: girlAnimation 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes girlAnimation {
+    0% {
+        transform: translateX(calc(100% + 100vw));
+    }
+
+    50% {
+        transform: translateX(calc(-100% - 100vw));
+    }
+
+    50.1% {
+        transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateX(calc(100% + 100vw)) rotateY(180deg);
+    }
+}
+
+section .login {
+    position: relative;
+    padding: 60px;
+    width: 450px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border: 1px solid #FFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+section .login h2 {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #8f2c24;
+    margin-bottom: 2rem;
+}
+
+section .login .inputBox input {
+    position: relative;
+    padding: 15px 20px;
+    width: 100%;
+    outline: none;
+    color: #8f2c24;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.login .inputBox input::placeholder {
+    color: #8f2c24;
+}
+
+.inputBox #btn {
+    background: #8f2c24;
+    color: #FFF;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.inputBox #btn:hover {
+    background: #d64c42;
+}
+
+.login .linkGroup {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login .linkGroup a {
+    color: #8f2c24;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login .linkGroup a:nth-child(2) {
+    text-decoration: underline;
+}
+
+.leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.leaves .set {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.leaves .set div {
+    position: absolute;
+    display: block;
+}
+
+.leaves .set div:nth-child(1){
+    left: 20%;
+    animation: leavesAnimation 20s  linear infinite;
+}
+.leaves .set div:nth-child(2){
+    left: 50%;
+    animation: leavesAnimation 14s  linear infinite;
+}
+.leaves .set div:nth-child(3){
+    left: 70%;
+    animation: leavesAnimation 12s  linear infinite;
+}
+.leaves .set div:nth-child(4){
+    left: 5%;
+    animation: leavesAnimation 15s  linear infinite;
+}
+.leaves .set div:nth-child(5){
+    left: 85%;
+    animation: leavesAnimation 18s  linear infinite;
+}
+.leaves .set div:nth-child(6){
+    left: 290%;
+    animation: leavesAnimation 12s  linear infinite;
+}
+.leaves .set div:nth-child(7){
+    left: 15%;
+    animation: leavesAnimation 14s  linear infinite;
+}
+.leaves .set div:nth-child(8){
+    left: 60%;
+    animation: leavesAnimation 15s  linear infinite;
+}
+
+@keyframes leavesAnimation{
+    0%{
+        opacity: 0;
+        top:-10%;
+        transform: translateX(20px)
+        rotate(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    20%{
+        transform: translateX(-20px)
+        rotate(45deg);
+    }  
+    40%{
+        transform: translateX(20px)
+        rotate(90deg);
+    }
+    60%{
+        transform: translateX(-20px)
+        rotate(135deg);
+    }
+    80%{
+        transform: translateX(20px)
+        rotate(180deg);
+    }
+    100%{
+        transform: translateX(-20px)
+        rotate(224deg);
+        top: 110%;
+    }
+}
